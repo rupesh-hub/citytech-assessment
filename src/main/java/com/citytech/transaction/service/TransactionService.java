@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class TransactionService implements ITransactionService{
+public class TransactionService implements ITransactionService {
 
     private final TransactionRepository transactionRepository;
 
@@ -19,16 +20,19 @@ public class TransactionService implements ITransactionService{
 
     @Override
     public List<Transaction> allTransactions() {
-        return transactionRepository.allTransactions();
+        return Optional.ofNullable(transactionRepository.allTransactions())
+                .orElse(null);
     }
 
     @Override
-    public List<Transaction> monthTransactions() {
-        return transactionRepository.monthTransaction();
+    public List<Transaction> monthTransactions(final int month) {
+        return Optional.ofNullable(transactionRepository.monthTransaction(month))
+                .orElse(null);
     }
 
     @Override
     public List<Transaction> todayTransactions() {
-        return transactionRepository.todayTransaction();
+        return Optional.ofNullable(transactionRepository.todayTransaction())
+                .orElse(null);
     }
 }

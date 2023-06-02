@@ -6,7 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDateTime;
 
 /**
  *rest api for transaction management
@@ -36,8 +39,8 @@ public class TransactionResource {
      * @return
      */
     @GetMapping("/month")
-    public ResponseEntity<?> monthTransactions() {
-        return new ResponseEntity(this.transactionService.monthTransactions(), HttpStatus.OK);
+    public ResponseEntity<?> monthTransactions(@RequestParam(name="month") final int month) {
+        return new ResponseEntity(this.transactionService.monthTransactions(month), HttpStatus.OK);
     }
 
     /**

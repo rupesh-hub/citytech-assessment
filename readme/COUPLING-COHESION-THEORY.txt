@@ -1,0 +1,14 @@
+2. Describe Coupling and Cohesion with examples.
+-> Coupling is the mechanism where one object is dependent to another object.
+-> This can be achieve by dependency injection.
+-> This can be of loosely coupling and tightly coupling.
+-> If one object can not exist with out other object the it is said to be tightly coupling
+	whereas if two objects somehow not that much dependent to eachother then it is loosely coupling.
+-> It is heighly recomendent to have loose coupling between classes and objects.
+-> Loose coupling can be achieve through Inheritance which is a basic building block of OOPS.
+-> Similary it is highly recommended to have high cohesion.
+-> Example:
+	If one have interface as Person and have class as Professor and Department.
+	-> Person is implemented by Professor.
+	-> Here Professor is professor with or without Department.
+	-> This nature is loose coupling.

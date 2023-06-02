@@ -7,7 +7,7 @@ import java.util.List;
 public interface ITransactionService {
 
     List<Transaction> allTransactions();
-    List<Transaction> monthTransactions();
+    List<Transaction> monthTransactions(int month);
     List<Transaction> todayTransactions();
 
 
